@@ -1,0 +1,63 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<section class="content-main">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-9">
+                <div class="content-header">
+                    <h2 class="content-title">Add New Product</h2>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Basic</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" type="text" placeholder="Type here" class="form-control" />
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" placeholder="Type here" class="form-control" rows="4"></textarea>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+
+                        </div>
+
+
+
+                        <button asp-action="create" type="submit" class="btn btn-md rounded font-sm hover-up">Create</button>
+                        <button asp-action="Index" class="btn btn-md rounded font-sm hover-up">Go Back</button>
+                    </div>
+                </div>
+                <!-- card end// -->
+                <!-- card end// -->
+            </div>
+            <div class="col-lg-3">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Media</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-upload">
+                            <img src="~/admin/assets/imgs/theme/upload.svg" alt="" />
+                            <input asp-for="Photo" class="form-control" type="file" />
+                            <span class="text-danger" asp-validation-for="Photo"></span>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- card end// -->
+                <!-- card end// -->
+            </div>
+    </form>
+    </div>
+</section>
+

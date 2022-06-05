@@ -1,0 +1,64 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+<section class="content-main">
+    <div class="row container justify-content-sm-between">
+        <div class="col-12">
+            <div class="content-header">
+                <h2 class="content-title">Add New Product</h2>
+            </div>
+        </div>
+        <form class="row" method="post" enctype="multipart/form-data">
+            <div class="col-lg-7">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Basic</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" placeholder="Type here" class="form-control" />
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" placeholder="Type here" class="form-control" rows="4"></textarea>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+                        <div class="mb-4 d-flex justify-content-end">
+                            <div>
+                                <button type="submit" class="btn btn-md rounded font-sm hover-up ms-auto">Create</button>
+                                <a asp-action="Index" class="btn btn-google rounded font-sm hover-up ms-auto">Go Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end// -->
+            </div>
+            <div class="col-lg-5">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Media</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-upload">
+                            <img src="~/admin/assets/imgs/theme/upload.svg" alt="" />
+                            <input asp-for="Photo" class="form-control" accept="image/*" />
+                            <span class="text-danger" asp-validation-for="Photo"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end// -->
+            </div>
+        </form>
+    </div>
+</section>
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" integrity="sha512-FOhq9HThdn7ltbK8abmGn60A/EMtEzIzv1rvuh+DqzJtSGq8BRdEN0U+j0iKEIffiw/yEtVuladk6rsG4X6Uqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" integrity="sha512-o6XqxgrUsKmchwy9G5VRNWSSxTS4Urr4loO6/0hYdpWmFUfHqGzawGxeQGMDqYzxjY9sbktPbNlkIQJWagVZQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(".form-select").select2()
+    </script>
+
+}

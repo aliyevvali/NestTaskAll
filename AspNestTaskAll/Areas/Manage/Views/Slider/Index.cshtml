@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<Slider>
+@{
+    ViewData["Title"] = "Index";
+}
+@section styles{
+    <style>
+        .table img.img-sm {
+            width: 570px !important;
+            height: 200px !important;
+        }
+    </style>
+}
+<section class="content-main">
+    <div class="content-header">
+        <h2 class="content-title">Sellers list</h2>
+        <div>
+            <a asp-action="create" asp-controller="slider" class="btn btn-primary"><i class="material-icons md-plus"></i> Create new</a>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <header class="card-header">
+            <div class="row gx-3">
+                <div class="col-lg-4 col-md-6 me-auto">
+                    <input type="text" placeholder="Search..." class="form-control" />
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <select class="form-select">
+                        <option>Status</option>
+                        <option>Active</option>
+                        <option>Disabled</option>
+                        <option>Show all</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <select class="form-select">
+                        <option>Show 20</option>
+                        <option>Show 30</option>
+                        <option>Show 40</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <!-- card-header end// -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Descrioption</th>
+                            <th class="text-end">Actions</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Slider item in Model)
+                        {
+                            <tr>
+                                <td width="40%">
+                                    <img src="~/assets/imgs/slider/@item.Image" class="img-sm" alt="Slider image" />
+                                </td>
+                                <td>@Html.Raw(item.Title)</td>
+                                <td>@item.Description</td>
+                                <td class="text-end">
+                                    <form method="post">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-brand rounded font-sm mt-15">Edit</a>
+                                        <button type="submit" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-google rounded font-sm mt-15">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+                <!-- table-responsive.// -->
+            </div>
+        </div>
+        <!-- card-body end// -->
+    </div>
+    <!-- card end// -->
+</section>
