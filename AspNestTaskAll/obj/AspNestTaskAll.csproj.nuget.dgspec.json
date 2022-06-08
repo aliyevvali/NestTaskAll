@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\nest\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\nest\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\nest\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj",
         "projectName": "AspNestTaskAll",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\nest\\AspNestTaskAll\\AspNestTaskAll\\AspNestTaskAll.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\AspNestTaskAll\\AspNestTaskAll\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\nest\\AspNestTaskAll\\AspNestTaskAll\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

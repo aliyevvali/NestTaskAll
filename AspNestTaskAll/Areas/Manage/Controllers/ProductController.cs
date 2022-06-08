@@ -3,6 +3,7 @@ using AspNestTaskAll.Models;
 using AspNestTaskAll.Utility;
 using AspNestTaskAll.Utility.Extentions;
 using AspNestTaskAll.ViewModels.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 namespace AspNestTaskAll.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private AppDbContext _context { get; }

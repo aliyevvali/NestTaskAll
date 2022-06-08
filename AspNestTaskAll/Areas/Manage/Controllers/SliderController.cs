@@ -2,6 +2,7 @@
 using AspNestTaskAll.Models;
 using AspNestTaskAll.Utility;
 using AspNestTaskAll.Utility.Extentions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 namespace AspNestTaskAll.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles = "Admin")]
     public class SliderController : Controller
     {
         private AppDbContext _context { get; }

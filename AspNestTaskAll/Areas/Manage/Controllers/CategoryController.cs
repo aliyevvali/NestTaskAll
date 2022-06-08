@@ -2,6 +2,7 @@
 using AspNestTaskAll.Models;
 using AspNestTaskAll.Utility;
 using AspNestTaskAll.Utility.Extentions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 namespace AspNestTaskAll.Areas.Manage.Controllers
 {
     [Area("Manage")]
+    [Authorize(Roles ="Admin")]
     public class CategoryController : Controller
     {
         private AppDbContext _context { get; }

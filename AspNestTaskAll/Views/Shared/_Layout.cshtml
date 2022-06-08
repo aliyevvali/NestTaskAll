@@ -123,7 +123,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a><img src="~/assets/imgs/theme/@settings["Logo"]" alt="logo" /></a>
+                        <a asp-controller="Home" asp-action="Index"><img src="~/assets/imgs/theme/@settings["Logo"]" alt="logo" /></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-2">
@@ -185,7 +185,7 @@
                                 <div class="header-action-icon-2">
                                     @if (User.Identity.IsAuthenticated)
                                     {
-                                        <a href="page-account.html">
+                                        <a href="page-account.html" >
                                             <img class="svgInject" alt="Nest" src="~/assets/imgs/theme/icons/@settings["AccountIcon"]" />
                                         </a>
                                         <a href="page-account.html"><span class="lable ml-0">Account</span></a>
@@ -195,14 +195,17 @@
                                                     <a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>@User.Identity.Name</a>
                                                 </li>
                                                 <li>
-                                                    <a asp-action="SignOut" asp-controller="Auth"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                    <a asp-action="ChangePassword" asp-controller="Auth">Change Password</a>
+                                                </li>
+                                                <li>
+                                                    <a style="font-size:23px" asp-action="SignOut" asp-controller="Auth"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     }
                                     else
                                     {
-                                        <a asp-action="Register" asp-controller="Auth"><i class="fi fi-rs-sign-out mr-10"></i>Qeydiyyatdan Kec</a>
+                                        <a style="font-size:23px" asp-action="SignIn" asp-controller="Auth" asp-route-ReturnUrl="@Context.Request.Path"><i class="fi fi-rs-sign-out mr-10"></i>Log In</a>
                                     }
 
                                     @*<div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">

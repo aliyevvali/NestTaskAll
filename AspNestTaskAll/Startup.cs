@@ -44,6 +44,7 @@ namespace AspNestTaskAll
             services.Configure<IdentityOptions>(opt => 
             {
                 opt.Password.RequiredLength = 8;
+                opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireDigit = true;   
                 opt.Password.RequireLowercase = true;
                 opt.Password.RequireUppercase = true;
@@ -51,6 +52,10 @@ namespace AspNestTaskAll
                 opt.Lockout.MaxFailedAccessAttempts = 3;
                 opt.Lockout.DefaultLockoutTimeSpan = System.TimeSpan.FromMinutes(10);
             
+            });
+            services.ConfigureApplicationCookie(opt=> 
+            {
+                opt.LoginPath = "/Auth/SignIn";
             });
         }
 
